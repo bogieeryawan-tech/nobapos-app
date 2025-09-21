@@ -92,6 +92,17 @@ const App: React.FC = () => {
   useEffect(() => { localStorage.setItem('nobapos-completedOrders', JSON.stringify(completedOrders)); }, [completedOrders]);
   useEffect(() => { if (dailySession) localStorage.setItem('nobapos-daily-session', JSON.stringify(dailySession)); else localStorage.removeItem('nobapos-daily-session') }, [dailySession]);
   
+  // This effect validates that the device's assigned branch ID still exists.
+  // If a branch is deleted, this will clear the invalid ID, forcing re-selection.
+  useEffect(() => {
+    if (currentBranchId !== null) {
+      const branchExists = branches.some(b => b.id === currentBranchId);
+      if (!branchExists) {
+        setCurrentBranchId(null);
+      }
+    }
+  }, [branches, currentBranchId]);
+
   const currentBranch = useMemo(() => branches.find(b => b.id === currentBranchId), [branches, currentBranchId]);
 
   const {

@@ -4,6 +4,7 @@ import { formatRupiah } from '../utils';
 import PieChart from './PieChart';
 import OrderList from './OrderList';
 import Icon from './Icon';
+import AIInsightsPanel from './AIInsightsPanel';
 
 
 interface ManagerDashboardProps {
@@ -445,6 +446,11 @@ const ManagerDashboard: React.FC<ManagerDashboardProps> = ({ orders, menuItems, 
         <StatCard title="Total Profit" value={formatRupiah(stats.totalProfit)} iconName="logo" />
         <StatCard title="Total Orders" value={stats.totalOrders.toString()} iconName="shopping-cart" />
         <StatCard title="Average Order" value={formatRupiah(stats.averageOrderValue)} iconName="credit_card" />
+      </div>
+
+      {/* AI Insights */}
+      <div className="mb-8">
+        <AIInsightsPanel orders={filteredOrders} menuItems={menuItems} branches={branches} />
       </div>
 
       {/* Charts */}

@@ -4,7 +4,14 @@
 
 # Run and deploy your AI Studio app
 
-This contains everything you need to run your app locally.
+This repository berisi aplikasi **Higgsfield Prompt Atlas**, sebuah pusat kendali untuk mendokumentasikan eksperimen prompt, parameter inferensi, dan hasil evaluasi dari model-model Higgsfield AI. Gunakan aplikasi ini untuk:
+
+- Menyimpan prompt baru lengkap dengan goal, squad owner, dan dataset referensi.
+- Melacak iterasi eksperimen, skor guardrail, dan latency inference.
+- Memfilter katalog prompt berdasarkan status, tag, atau model Higgsfield yang digunakan.
+- Mengevaluasi kesehatan portofolio prompt melalui panel statistik real-time.
+
+Panduan berikut membantu Anda menjalankan aplikasi secara lokal.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1SFG94FBlxFC7PXPSaZscxxoDr3xDzWjJ
 
